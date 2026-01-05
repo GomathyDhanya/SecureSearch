@@ -1,0 +1,28 @@
+# --- Dependencies ---
+node_modules/
+server/node_modules/
+package-lock.json   # Optional: Remove this line if you WANT to version lock your dependencies (recommended to keep lock files usually, but ignore modules)
+yarn.lock
+
+# --- Secrets (CRITICAL) ---
+.env
+.env.local
+.env.*.local
+
+# --- Build Outputs ---
+dist/
+build/
+out/
+
+# --- System Files ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
