@@ -12,7 +12,7 @@ export function useSecureSystem() {
   const [logs, setLogs] = useState([])
   const [isReady, setIsReady] = useState(false)
 
-  // Refs for heavy objects
+
   const engineRef = useRef(null)
   const aiRef = useRef({ processor: null, vision: null, tokenizer: null, text: null })
   const keysRef = useRef(null)
@@ -71,7 +71,7 @@ export function useSecureSystem() {
 
       setUser({ email, token: data.token })
       setStatus("Ready")
-      addLog(`🔓 Welcome back, ${email}`)
+      addLog(`Welcome back, ${email}`)
     } catch (e) {
       addLog(`Login Error: ${e.message}`)
       setStatus("Error")
@@ -83,9 +83,8 @@ export function useSecureSystem() {
   try {
     const masterKey = generateRandomKey()
 
-    // --- FIX IS HERE: Use the helper instead of CryptoJS ---
+
     const salt = generateSalt() 
-    // -----------------------------------------------------
 
     const passwordKey = deriveKey(password, salt)
 
