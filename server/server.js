@@ -5,7 +5,7 @@ import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
 import createCKKSEngine from './ckks_node.js'
 import dotenv from 'dotenv'
-// 1. Import S3 Client
+
 import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner' 
 
@@ -18,7 +18,7 @@ const fastify = Fastify({ logger: true, bodyLimit: MAX_BODY_SIZE })
 await fastify.register(cors, { origin: '*' })
 await fastify.register(jwt, { secret: process.env.JWT_SECRET || 'dev-secret' })
 
-// --- 2. CONFIGURE R2 CLIENT ---
+
 const R2 = new S3Client({
   region: 'auto',
   // This constructs: https://16dbe536a3b767e836f7185f343a545d.r2.cloudflarestorage.com
@@ -29,13 +29,13 @@ const R2 = new S3Client({
   },
 })
 
-// This will be "securelens"
+
 const BUCKET_NAME = process.env.R2_BUCKET_NAME
-// --- MONGODB ---
+
 const MONGO_URI = process.env.MONGO_URI
 try {
   await mongoose.connect(MONGO_URI)
-  console.log("✅ MongoDB Connected")
+  console.log("MongoDB Connected")
 } catch (err) { console.error(err) }
 
 // --- SCHEMAS ---
@@ -61,17 +61,16 @@ let engine
 async function initEngine() {
   const module = await createCKKSEngine()
   engine = new module.CKKSEngine(8192)
-  console.log("✅ Crypto Engine Ready")
+  console.log("Crypto Engine Ready")
 }
 await initEngine()
 
 
-// --- AUTH MIDDLEWARE ---
 fastify.decorate("authenticate", async function(request, reply) {
   try { await request.jwtVerify() } catch (err) { reply.send(err) }
 })
 
-// --- AUTH ROUTES ---
+
 fastify.post('/register', async (req, reply) => {
   const { email, password, salt, encryptedMasterKey, encryptedKeys } = req.body
   const passwordHash = await bcrypt.hash(password, 10)
@@ -96,7 +95,7 @@ fastify.post('/login', async (req, reply) => {
   }
 })
 
-// --- 3. UPDATED UPLOAD (MONGO + R2) ---
+
 fastify.post('/upload', { onRequest: [fastify.authenticate] }, async (req, reply) => {
   const { encryptedImage, encryptedVector } = req.body
   
@@ -123,7 +122,7 @@ fastify.post('/upload', { onRequest: [fastify.authenticate] }, async (req, reply
   return { status: 'ok', id: newRecord._id }
 })
 
-// --- SEARCH ROUTE (Unchanged) ---
+
 fastify.post('/search', { onRequest: [fastify.authenticate] }, async (req, reply) => {
   const { queryVector, relinKeys } = req.body
   // ... (Homomorphic Search Logic stays exactly the same) ...
@@ -139,7 +138,7 @@ fastify.post('/search', { onRequest: [fastify.authenticate] }, async (req, reply
   return { results }
 })
 
-// --- 4. UPDATED RETRIEVE (R2 -> Client) ---
+
 fastify.post('/get-image', { onRequest: [fastify.authenticate] }, async (req, reply) => {
   const { id } = req.body
   
