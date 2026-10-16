@@ -2,7 +2,7 @@
 
 A working experimental system for a personal collection, including use across devices. Images, embeddings, queries, numeric scores, and the client routing index are encrypted at the storage/search server. The client builds an incremental centroid hierarchy; the server performs CKKS ciphertext–ciphertext similarity computation and dimension reduction. The client decrypts and ranks scalar scores.
 
-**This is encrypted-content search, not a zero-knowledge or fully oblivious database.** In ordinary mode the server sees account identity, group membership/occupancy, selected groups, update locations, adaptive round counts/stopping behavior, sizes, timing, and fetched image IDs. Query-private cover mode randomizes a fixed-size group set and returns all images in it, giving a conditional one-query ε-local-DP access-pattern guarantee without hiding account, timing, or updates. See [the formal scope](docs/private-cover.md) and [the design and threat model](docs/design.md).
+**This is encrypted-content search** In ordinary mode the server sees account identity, group membership/occupancy, selected groups, update locations, adaptive round counts/stopping behavior, sizes, timing, and fetched image IDs. Query-private cover mode randomizes a fixed-size group set and returns all images in it, giving a conditional one-query ε-local-DP access-pattern guarantee without hiding account, timing, or updates. See [the formal scope](docs/private-cover.md) and [the design and threat model](docs/design.md).
 
 ## Run locally
 
@@ -60,12 +60,7 @@ Results go to `benchmarks/ann-results.json`; set `OUT` to retain separate runs. 
 
 For real-image relevance and ANN recall, use the [official COCO val2017 benchmark protocol](docs/private-cover.md#real-image-evaluation-protocol). `server/prepare_coco.mjs` embeds all 5,000 validation images and 25,014 captions with the browser's q8 CLIP model; `server/benchmark_coco.mjs` evaluates exact cosine, fixed probes, and private cover at several ε values on those embeddings. The [measured COCO report](benchmarks/COCO_REPORT.md) gives the reproducible results and limitations. The dataset and model cache are local ignored files, so download them from their cited official sources to reproduce the run.
 
-The [research novelty audit](docs/research-novelty-audit.md) compares this implementation with encrypted ANN and private-search prior work, distinguishes its measured results from novelty claims, and states the experiments needed for a publishable contribution.
-The [systems paper target](docs/systems-paper-target.md) defines the candidate contribution and the comparisons that would falsify it; the [live segment protocol](docs/segmented-index.md) records its current privacy and client-cost limits.
-The [dynamic systems experiment](benchmarks/COCO_DYNAMIC_SYSTEMS_REPORT.md) measures client-held global centroid routing and a scheduled-merge layout on the same COCO corpus. Its 5,000-image write counts are modeled; the live segmented upload path was added afterward. Run `npm run bench:coco:live` from `server/` for a small real-encryption upload/search pilot; it measures HTTP payload bytes and actual CKKS time but excludes media bytes and model inference.
-The [live-segment report](benchmarks/COCO_LIVE_SEGMENTS_REPORT.md) evaluates the implemented update algorithm on all 25,014 COCO captions and separates that full-corpus quality result from a 512-image real-encryption API pilot.
-The [opaque-buffer COCO experiment](benchmarks/COCO_BUFFERED_RESEARCH_REPORT.md) tests an opt-in update-location privacy window at a 2,750-image growth checkpoint, including matched-recall layout results and a real CKKS pilot. Its [security scope](docs/opaque-buffer-research.md) is deliberately narrow; the prototype does not yet establish a conference-ready contribution.
-The [full-corpus buffered follow-up](benchmarks/COCO_BUFFERED_IMPROVEMENTS.md) compares 5,000 images and all 25,014 captions at matched recall, sweeps seal sizes, and measures the simpler unchanged-index response optimization.
+
 
 ```sh
 cd client
