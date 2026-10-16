@@ -1,7 +1,6 @@
 # --- Dependencies ---
 node_modules/
 server/node_modules/
-package-lock.json   # Optional: Remove this line if you WANT to version lock your dependencies (recommended to keep lock files usually, but ignore modules)
 yarn.lock
 
 # --- Secrets (CRITICAL) ---
@@ -26,3 +25,10 @@ yarn-debug.log*
 yarn-error.log*
 logs/
 *.log
+# Local encrypted demo storage and copied WASM asset
+server/.local-data-v2/
+client/public/seal_throws.wasm
+benchmarks/*.raw.json
+benchmarks/coco-*/
+datasets/
+__pycache__/

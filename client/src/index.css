@@ -94,3 +94,34 @@ button.secondary:hover { background: #cbd5e1; }
   height: 200px;
   overflow-y: auto;
 }
+.container { max-width: 1080px; }
+.header, .section-top, .recovery { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.header { padding:24px 0; }
+h1 { font-size:42px; letter-spacing:-1.5px; }
+h3 { font-size:16px; }
+.eyebrow { font-size:11px; font-weight:700; letter-spacing:2px; color:#2563eb; }
+.status { padding:14px 18px; border:1px solid #bbf7d0; background:#f0fdf4; border-radius:10px; margin-bottom:24px; overflow-wrap:anywhere; }
+.status.working { background:#eff6ff; border-color:#bfdbfe; }
+.actions, .synthetic-controls { display:flex; align-items:center; gap:12px; margin:12px 0; }
+.actions input { margin:0; }
+label { font-size:13px; font-weight:600; }
+label input { margin-top:6px; }
+.inline { display:flex; align-items:center; gap:10px; }
+select { padding:10px; border:1px solid #cbd5e1; border-radius:8px; background:white; }
+.checkbox { display:flex; gap:10px; align-items:center; margin:20px 0; font-weight:400; }
+.checkbox input { width:auto; margin:0; }
+.demo-entry { margin-top:28px; padding-top:16px; border-top:1px solid #e2e8f0; }
+.recovery { padding:20px; background:#fff7ed; border:1px solid #fed7aa; border-radius:12px; margin-bottom:24px; }
+.recovery p { margin-bottom:0; font-size:13px; }
+.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:24px; }
+.stats article { background:#0f172a; color:white; padding:24px; border-radius:12px; }
+.stats strong { display:block; font-size:28px; }
+.stats span { display:block; color:#cbd5e1; font-size:12px; margin-top:6px; }
+.metrics { margin-top:24px; padding-top:8px; border-top:1px solid #e2e8f0; }
+table { border-collapse:collapse; width:100%; font-size:13px; }
+th,td { padding:12px 8px; text-align:left; border-bottom:1px solid #e2e8f0; }
+th { color:#64748b; }
+.muted { color:#64748b; font-size:12px; font-weight:400; }
+.privacy { padding:20px 0; font-size:13px; }
+button { white-space:nowrap; }
+@media(max-width:700px) { .container{padding:16px} .header,.section-top,.recovery,.actions,.synthetic-controls{flex-wrap:wrap} .stats{grid-template-columns:1fr} .card{padding:20px} h1{font-size:34px} }

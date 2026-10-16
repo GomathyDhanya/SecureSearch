@@ -1,0 +1,535 @@
+{
+  "generatedAt": "2026-10-16T16:19:23.689Z",
+  "dataset": {
+    "dataset": "MS COCO val2017 captions",
+    "split": "val2017",
+    "annotationSha256": "afe3b30e403dd7f228e2373023abbd60042a6e10ec6874d3652df034d289ebb9",
+    "model": "Xenova/clip-vit-base-patch32",
+    "modelRevision": "d15189d7028b43f1d3e65039190477f6af591c2a",
+    "modelDtype": "q8",
+    "imageCount": 5000,
+    "captionCount": 25014,
+    "selectionSeed": "20261014",
+    "imageIdsSha256": "e6b396eec948f99b84fbb3562dc222cab9f82f089b0a8ac75993ab96dd5b9a1d",
+    "captionIdsSha256": "8df9e7ab8bb968f450eaf24587607e56a27ba468e9b05b933a87414be5708e99",
+    "format": "l2-normalized CLIP projection, 512 dimensions; JSONL; official caption-to-image relevance"
+  },
+  "environment": {
+    "node": "v24.12.0",
+    "platform": "darwin",
+    "arch": "x64",
+    "cpu": "Intel(R) Core(TM) i5-8257U CPU @ 1.40GHz"
+  },
+  "protocol": "experimental opaque append buffer with count-scheduled seal and merge; plaintext layout and vector placements measured, not ciphertext bytes",
+  "evaluation": {
+    "corpusImages": 320,
+    "evaluatedCaptions": 1000,
+    "imageLimit": 320,
+    "privateTrials": 20,
+    "budget": 4,
+    "segmentSize": 0,
+    "liveSegmentSize": 0,
+    "bufferedSegmentSize": 64,
+    "segmentMerge": false,
+    "insertSeed": 0,
+    "heGlobalProbes": 0,
+    "heOnlyGlobal": false,
+    "fixedProbes": [],
+    "globalProbes": [
+      4,
+      6,
+      8,
+      10
+    ],
+    "balancedProbes": [],
+    "privateEpsilons": [],
+    "decoyRequired": [],
+    "imageBytes": "not measured",
+    "relevance": "official COCO caption image_id; all other matching-looking images count as non-relevant",
+    "annTruth": "exact top-10 cosine on the same quantized CLIP embeddings",
+    "scoreComputation": "NumPy 2.5.1 float64 matrix multiplication",
+    "confidence": "normal 95% interval across image-level means; captions and private trials averaged within each image",
+    "limitation": "COCO val2017, not COCO 2014 Karpathy test; caption relevance has false negatives. Plaintext routing metrics are not HE timings."
+  },
+  "index": {
+    "format": "buffered-private-centroid-tree-experiment-v1",
+    "embeddingSpace": null,
+    "count": 320,
+    "pendingCount": 0,
+    "leaves": 11,
+    "maxLeaf": 64,
+    "routingBytes": 297892
+  },
+  "updates": [
+    {
+      "count": 64,
+      "changedLeaves": 1,
+      "rewrittenVectors": 64,
+      "fetchedVectors": 0,
+      "splits": 0,
+      "merges": 0,
+      "sealed": true,
+      "pendingCount": 0,
+      "milliseconds": 95.36351299999978
+    },
+    {
+      "count": 64,
+      "changedLeaves": 4,
+      "rewrittenVectors": 128,
+      "fetchedVectors": 64,
+      "splits": 1,
+      "merges": 1,
+      "sealed": true,
+      "pendingCount": 0,
+      "milliseconds": 170.99517799999967
+    },
+    {
+      "count": 64,
+      "changedLeaves": 1,
+      "rewrittenVectors": 64,
+      "fetchedVectors": 0,
+      "splits": 0,
+      "merges": 0,
+      "sealed": true,
+      "pendingCount": 0,
+      "milliseconds": 32.07632900000044
+    },
+    {
+      "count": 64,
+      "changedLeaves": 10,
+      "rewrittenVectors": 256,
+      "fetchedVectors": 192,
+      "splits": 3,
+      "merges": 2,
+      "sealed": true,
+      "pendingCount": 0,
+      "milliseconds": 212.50175000000036
+    },
+    {
+      "count": 64,
+      "changedLeaves": 1,
+      "rewrittenVectors": 64,
+      "fetchedVectors": 0,
+      "splits": 0,
+      "merges": 0,
+      "sealed": true,
+      "pendingCount": 0,
+      "milliseconds": 9.765717999999652
+    }
+  ],
+  "summaries": {
+    "exhaustive": {
+      "annRecall10": {
+        "mean": 1,
+        "ci95Normal": [
+          1,
+          1
+        ],
+        "n": 318
+      },
+      "expectedAnnRecall10": null,
+      "imageRecall1": {
+        "mean": 0.564517819706499,
+        "ci95Normal": [
+          0.5207843511441462,
+          0.6082512882688517
+        ],
+        "n": 318
+      },
+      "imageRecall5": {
+        "mean": 0.8694444444444445,
+        "ci95Normal": [
+          0.8394186034847446,
+          0.8994702854041443
+        ],
+        "n": 318
+      },
+      "imageRecall10": {
+        "mean": 0.944287211740042,
+        "ci95Normal": [
+          0.9263229540328431,
+          0.9622514694472409
+        ],
+        "n": 318
+      },
+      "candidateFraction": {
+        "mean": 1,
+        "ci95Normal": [
+          1,
+          1
+        ],
+        "n": 318
+      },
+      "coverRawImageBytes": null,
+      "certified": null,
+      "falseCertificate": null,
+      "regretBound": null,
+      "regretViolation": null,
+      "preferredIncluded": null,
+      "overPrivateCap": null
+    },
+    "global-centroid-4": {
+      "annRecall10": {
+        "mean": 0.8953197064989521,
+        "ci95Normal": [
+          0.8834740202014901,
+          0.9071653927964141
+        ],
+        "n": 318
+      },
+      "expectedAnnRecall10": null,
+      "imageRecall1": {
+        "mean": 0.5479035639412998,
+        "ci95Normal": [
+          0.5039076202492282,
+          0.5918995076333714
+        ],
+        "n": 318
+      },
+      "imageRecall5": {
+        "mean": 0.8227987421383647,
+        "ci95Normal": [
+          0.7877992291847404,
+          0.8577982550919889
+        ],
+        "n": 318
+      },
+      "imageRecall10": {
+        "mean": 0.8998951781970649,
+        "ci95Normal": [
+          0.8738620590678198,
+          0.92592829732631
+        ],
+        "n": 318
+      },
+      "candidateFraction": {
+        "mean": 0.4941655201781966,
+        "ci95Normal": [
+          0.48859796451061904,
+          0.49973307584577414
+        ],
+        "n": 318
+      },
+      "coverRawImageBytes": null,
+      "certified": null,
+      "falseCertificate": null,
+      "regretBound": null,
+      "regretViolation": null,
+      "preferredIncluded": null,
+      "overPrivateCap": null
+    },
+    "global-centroid-6": {
+      "annRecall10": {
+        "mean": 0.9609696016771483,
+        "ci95Normal": [
+          0.9542794496316565,
+          0.9676597537226401
+        ],
+        "n": 318
+      },
+      "expectedAnnRecall10": null,
+      "imageRecall1": {
+        "mean": 0.5568134171907757,
+        "ci95Normal": [
+          0.5132349988449311,
+          0.6003918355366203
+        ],
+        "n": 318
+      },
+      "imageRecall5": {
+        "mean": 0.8508385744234801,
+        "ci95Normal": [
+          0.8189134671118903,
+          0.8827636817350699
+        ],
+        "n": 318
+      },
+      "imageRecall10": {
+        "mean": 0.9233228511530398,
+        "ci95Normal": [
+          0.9012664799264111,
+          0.9453792223796685
+        ],
+        "n": 318
+      },
+      "candidateFraction": {
+        "mean": 0.669828190513627,
+        "ci95Normal": [
+          0.6647386010760091,
+          0.6749177799512448
+        ],
+        "n": 318
+      },
+      "coverRawImageBytes": null,
+      "certified": null,
+      "falseCertificate": null,
+      "regretBound": null,
+      "regretViolation": null,
+      "preferredIncluded": null,
+      "overPrivateCap": null
+    },
+    "global-centroid-8": {
+      "annRecall10": {
+        "mean": 0.9923742138364776,
+        "ci95Normal": [
+          0.9900275339405027,
+          0.9947208937324525
+        ],
+        "n": 318
+      },
+      "expectedAnnRecall10": null,
+      "imageRecall1": {
+        "mean": 0.5638888888888889,
+        "ci95Normal": [
+          0.520213981403349,
+          0.6075637963744288
+        ],
+        "n": 318
+      },
+      "imageRecall5": {
+        "mean": 0.8666142557651992,
+        "ci95Normal": [
+          0.8362147686467234,
+          0.8970137428836751
+        ],
+        "n": 318
+      },
+      "imageRecall10": {
+        "mean": 0.9414570230607968,
+        "ci95Normal": [
+          0.9232534043660774,
+          0.9596606417555162
+        ],
+        "n": 318
+      },
+      "candidateFraction": {
+        "mean": 0.8100750131027258,
+        "ci95Normal": [
+          0.805561124866122,
+          0.8145889013393296
+        ],
+        "n": 318
+      },
+      "coverRawImageBytes": null,
+      "certified": null,
+      "falseCertificate": null,
+      "regretBound": null,
+      "regretViolation": null,
+      "preferredIncluded": null,
+      "overPrivateCap": null
+    },
+    "global-centroid-10": {
+      "annRecall10": {
+        "mean": 0.9993081761006288,
+        "ci95Normal": [
+          0.9986502438023225,
+          0.9999661083989352
+        ],
+        "n": 318
+      },
+      "expectedAnnRecall10": null,
+      "imageRecall1": {
+        "mean": 0.5638888888888889,
+        "ci95Normal": [
+          0.520213981403349,
+          0.6075637963744288
+        ],
+        "n": 318
+      },
+      "imageRecall5": {
+        "mean": 0.8688155136268343,
+        "ci95Normal": [
+          0.8387975097453697,
+          0.8988335175082989
+        ],
+        "n": 318
+      },
+      "imageRecall10": {
+        "mean": 0.9436582809224318,
+        "ci95Normal": [
+          0.9256753763972904,
+          0.9616411854475732
+        ],
+        "n": 318
+      },
+      "candidateFraction": {
+        "mean": 0.9411736766247399,
+        "ci95Normal": [
+          0.9389846782153635,
+          0.9433626750341164
+        ],
+        "n": 318
+      },
+      "coverRawImageBytes": null,
+      "certified": null,
+      "falseCertificate": null,
+      "regretBound": null,
+      "regretViolation": null,
+      "preferredIncluded": null,
+      "overPrivateCap": null
+    }
+  },
+  "examples": [
+    {
+      "captionId": 436501,
+      "imageId": 98839,
+      "exhaustiveTop10": [
+        98839,
+        25560,
+        519764,
+        117374,
+        568690,
+        147338,
+        163155,
+        479248,
+        118515,
+        386457
+      ]
+    },
+    {
+      "captionId": 162061,
+      "imageId": 52507,
+      "exhaustiveTop10": [
+        52507,
+        270122,
+        378116,
+        79031,
+        150224,
+        508101,
+        182441,
+        514797,
+        128675,
+        164115
+      ]
+    },
+    {
+      "captionId": 633196,
+      "imageId": 197004,
+      "exhaustiveTop10": [
+        294831,
+        290619,
+        544565,
+        18575,
+        293858,
+        338905,
+        181796,
+        12576,
+        160012,
+        571804
+      ]
+    },
+    {
+      "captionId": 715892,
+      "imageId": 89271,
+      "exhaustiveTop10": [
+        519764,
+        89271,
+        492284,
+        118515,
+        202445,
+        81061,
+        117374,
+        245764,
+        361621,
+        163155
+      ]
+    },
+    {
+      "captionId": 559434,
+      "imageId": 196185,
+      "exhaustiveTop10": [
+        196185,
+        479912,
+        500257,
+        135673,
+        571857,
+        543528,
+        525322,
+        381639,
+        128675,
+        221291
+      ]
+    },
+    {
+      "captionId": 751178,
+      "imageId": 105923,
+      "exhaustiveTop10": [
+        105923,
+        384468,
+        51961,
+        389316,
+        314294,
+        169996,
+        292456,
+        522940,
+        141597,
+        514508
+      ]
+    },
+    {
+      "captionId": 614757,
+      "imageId": 315187,
+      "exhaustiveTop10": [
+        141597,
+        38829,
+        169996,
+        198805,
+        491213,
+        334006,
+        350003,
+        88265,
+        284725,
+        442463
+      ]
+    },
+    {
+      "captionId": 410631,
+      "imageId": 382111,
+      "exhaustiveTop10": [
+        382111,
+        93965,
+        38829,
+        424162,
+        314294,
+        156071,
+        534827,
+        577862,
+        61584,
+        221281
+      ]
+    },
+    {
+      "captionId": 799334,
+      "imageId": 292456,
+      "exhaustiveTop10": [
+        488710,
+        281414,
+        538364,
+        491213,
+        292456,
+        456394,
+        38829,
+        424162,
+        358195,
+        442463
+      ]
+    },
+    {
+      "captionId": 170329,
+      "imageId": 12576,
+      "exhaustiveTop10": [
+        12576,
+        294831,
+        160012,
+        376093,
+        374982,
+        296284,
+        430973,
+        226903,
+        447611,
+        338905
+      ]
+    }
+  ],
+  "encrypted": null
+}

@@ -1,0 +1,141 @@
+{
+  "scope": "Real CKKS, AES-GCM, HTTP-inject, and local persistence on a COCO val2017 image prefix. Image blobs are fixture strings; no network transport or model inference. This is a small-scale pilot, not a scaling result.",
+  "generatedAt": "2026-10-16T16:33:43.837Z",
+  "dataset": "MS COCO val2017 captions",
+  "imageLimit": 320,
+  "queryLimit": 1,
+  "segmentSize": 64,
+  "nprobe": 4,
+  "exhaustiveCompare": false,
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i5-8257U CPU @ 1.40GHz",
+    "node": "v24.12.0"
+  },
+  "keygenMs": 1642.4974069999998,
+  "scenarios": [
+    {
+      "name": "opaque-buffer",
+      "imageCount": 320,
+      "finalLeaves": 11,
+      "fullIndexResponseBytes": 397379,
+      "storedVectorCiphertextBytes": 19881824,
+      "traffic": {
+        "commitBytes": 44406751,
+        "leafDownloadBytes": 3707544,
+        "indexDownloadBytes": 394,
+        "searchRequestBytes": 441756,
+        "searchResponseBytes": 176633
+      },
+      "updates": [
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 64,
+          "pendingCount": 0,
+          "leaves": 1,
+          "maxLeaf": 64,
+          "routingBytes": 21588,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4499934,
+          "clusteringAndFetchMs": 56.34378699999979,
+          "totalMs": 577.6609919999992
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 128,
+          "pendingCount": 0,
+          "leaves": 4,
+          "maxLeaf": 49,
+          "routingBytes": 106648,
+          "inserted": 64,
+          "splits": 1,
+          "mergeCount": 1,
+          "touchedLeaves": 4,
+          "fetchedVectors": 64,
+          "rewrittenVectors": 128,
+          "uploadedBytes": 9960690,
+          "clusteringAndFetchMs": 340.4325769999996,
+          "totalMs": 1434.6735900000003
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 192,
+          "pendingCount": 0,
+          "leaves": 5,
+          "maxLeaf": 64,
+          "routingBytes": 127895,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4640852,
+          "clusteringAndFetchMs": 39.8951219999999,
+          "totalMs": 500.8659869999992
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 256,
+          "pendingCount": 0,
+          "leaves": 10,
+          "maxLeaf": 47,
+          "routingBytes": 276618,
+          "inserted": 64,
+          "splits": 3,
+          "mergeCount": 2,
+          "touchedLeaves": 10,
+          "fetchedVectors": 192,
+          "rewrittenVectors": 256,
+          "uploadedBytes": 20437793,
+          "clusteringAndFetchMs": 682.3949759999996,
+          "totalMs": 2721.9427410000008
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 320,
+          "pendingCount": 0,
+          "leaves": 11,
+          "maxLeaf": 64,
+          "routingBytes": 297933,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4867482,
+          "clusteringAndFetchMs": 19.002024999999776,
+          "totalMs": 783.2659650000005
+        }
+      ],
+      "queries": [
+        {
+          "captionId": 606064,
+          "annRecall10": 0.9,
+          "candidates": 159,
+          "searchMs": 3317.26411,
+          "serverComputeMs": 2115.545736
+        }
+      ],
+      "exhaustiveQueries": [],
+      "summary": {
+        "meanAnnRecall10": 0.9,
+        "meanCandidateFraction": 0.496875,
+        "meanServerComputeMs": 2115.545736,
+        "p50SearchMs": 3317.26411,
+        "p95SearchMs": 3317.26411,
+        "rewrittenVectors": 576
+      }
+    }
+  ]
+}

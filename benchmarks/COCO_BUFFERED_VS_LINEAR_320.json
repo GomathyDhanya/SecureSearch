@@ -1,0 +1,208 @@
+{
+  "scope": "Real CKKS, AES-GCM, HTTP-inject, and local persistence on a COCO val2017 image prefix. Image blobs are fixture strings; no network transport or model inference. This is a small-scale pilot, not a scaling result.",
+  "generatedAt": "2026-10-16T16:18:37.746Z",
+  "dataset": "MS COCO val2017 captions",
+  "imageLimit": 320,
+  "queryLimit": 5,
+  "segmentSize": 64,
+  "nprobe": 4,
+  "exhaustiveCompare": true,
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i5-8257U CPU @ 1.40GHz",
+    "node": "v24.12.0"
+  },
+  "keygenMs": 1409.8587440000001,
+  "scenarios": [
+    {
+      "name": "opaque-buffer",
+      "imageCount": 320,
+      "finalLeaves": 11,
+      "storedVectorCiphertextBytes": 19882712,
+      "traffic": {
+        "commitBytes": 44404343,
+        "leafDownloadBytes": 3707544,
+        "indexDownloadBytes": 4684772,
+        "searchRequestBytes": 4420143,
+        "searchResponseBytes": 1773542
+      },
+      "updates": [
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 64,
+          "pendingCount": 0,
+          "leaves": 1,
+          "maxLeaf": 64,
+          "routingBytes": 21588,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4499486,
+          "clusteringAndFetchMs": 50.31325300000026,
+          "totalMs": 641.8248700000004
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 128,
+          "pendingCount": 0,
+          "leaves": 4,
+          "maxLeaf": 49,
+          "routingBytes": 106648,
+          "inserted": 64,
+          "splits": 1,
+          "mergeCount": 1,
+          "touchedLeaves": 4,
+          "fetchedVectors": 64,
+          "rewrittenVectors": 128,
+          "uploadedBytes": 9958330,
+          "clusteringAndFetchMs": 306.94806900000003,
+          "totalMs": 1035.193283999999
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 192,
+          "pendingCount": 0,
+          "leaves": 5,
+          "maxLeaf": 64,
+          "routingBytes": 127895,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4640364,
+          "clusteringAndFetchMs": 33.75948900000003,
+          "totalMs": 415.7530200000001
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 256,
+          "pendingCount": 0,
+          "leaves": 10,
+          "maxLeaf": 47,
+          "routingBytes": 276618,
+          "inserted": 64,
+          "splits": 3,
+          "mergeCount": 2,
+          "touchedLeaves": 10,
+          "fetchedVectors": 192,
+          "rewrittenVectors": 256,
+          "uploadedBytes": 20436645,
+          "clusteringAndFetchMs": 641.7428459999992,
+          "totalMs": 2159.8487139999997
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 320,
+          "pendingCount": 0,
+          "leaves": 11,
+          "maxLeaf": 64,
+          "routingBytes": 297933,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4869518,
+          "clusteringAndFetchMs": 9.85344299999997,
+          "totalMs": 470.29546500000106
+        }
+      ],
+      "queries": [
+        {
+          "captionId": 362169,
+          "annRecall10": 0.8,
+          "candidates": 120,
+          "searchMs": 2543.2945170000003,
+          "serverComputeMs": 1428.1717200000003
+        },
+        {
+          "captionId": 132886,
+          "annRecall10": 1,
+          "candidates": 168,
+          "searchMs": 2286.335987000002,
+          "serverComputeMs": 2083.9458059999997
+        },
+        {
+          "captionId": 606064,
+          "annRecall10": 0.9,
+          "candidates": 159,
+          "searchMs": 2038.9905929999986,
+          "serverComputeMs": 1896.7062589999987
+        },
+        {
+          "captionId": 403727,
+          "annRecall10": 0.6,
+          "candidates": 151,
+          "searchMs": 1670.0559130000001,
+          "serverComputeMs": 1525.9967079999951
+        },
+        {
+          "captionId": 661678,
+          "annRecall10": 1,
+          "candidates": 154,
+          "searchMs": 1711.5211030000064,
+          "serverComputeMs": 1571.752886000002
+        }
+      ],
+      "exhaustiveQueries": [
+        {
+          "captionId": 362169,
+          "exhaustiveRecall10": 1,
+          "candidates": 320,
+          "searchMs": 3930.7906359999997,
+          "serverComputeMs": 3737.913534999998
+        },
+        {
+          "captionId": 132886,
+          "exhaustiveRecall10": 1,
+          "candidates": 320,
+          "searchMs": 3932.0809069999996,
+          "serverComputeMs": 3732.9669399999984
+        },
+        {
+          "captionId": 606064,
+          "exhaustiveRecall10": 1,
+          "candidates": 320,
+          "searchMs": 4444.481328000002,
+          "serverComputeMs": 4206.261659
+        },
+        {
+          "captionId": 403727,
+          "exhaustiveRecall10": 1,
+          "candidates": 320,
+          "searchMs": 4102.480044999997,
+          "serverComputeMs": 3910.353833999994
+        },
+        {
+          "captionId": 661678,
+          "exhaustiveRecall10": 1,
+          "candidates": 320,
+          "searchMs": 3844.4671850000013,
+          "serverComputeMs": 3542.8001799999984
+        }
+      ],
+      "summary": {
+        "meanAnnRecall10": 0.8600000000000001,
+        "meanCandidateFraction": 0.47000000000000003,
+        "meanServerComputeMs": 1701.3146757999991,
+        "p50SearchMs": 2038.9905929999986,
+        "p95SearchMs": 2543.2945170000003,
+        "meanExhaustiveRecall10": 1,
+        "meanExhaustiveServerComputeMs": 3826.0592295999973,
+        "p50ExhaustiveSearchMs": 3932.0809069999996,
+        "p95ExhaustiveSearchMs": 4444.481328000002,
+        "rewrittenVectors": 576
+      }
+    }
+  ]
+}

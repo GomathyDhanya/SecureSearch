@@ -1,0 +1,168 @@
+{
+  "scope": "Real CKKS, AES-GCM, HTTP-inject, and local persistence on a COCO val2017 image prefix. Image blobs are fixture strings; no network transport or model inference. This is a small-scale pilot, not a scaling result.",
+  "generatedAt": "2026-10-16T16:19:11.637Z",
+  "dataset": "MS COCO val2017 captions",
+  "imageLimit": 320,
+  "queryLimit": 5,
+  "segmentSize": 64,
+  "nprobe": 4,
+  "exhaustiveCompare": false,
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i5-8257U CPU @ 1.40GHz",
+    "node": "v24.12.0"
+  },
+  "keygenMs": 1003.4073629999998,
+  "scenarios": [
+    {
+      "name": "flat-scan",
+      "imageCount": 320,
+      "finalLeaves": 5,
+      "storedVectorCiphertextBytes": 17671036,
+      "traffic": {
+        "commitBytes": 22378936,
+        "leafDownloadBytes": 0,
+        "indexDownloadBytes": 59687,
+        "searchRequestBytes": 2209423,
+        "searchResponseBytes": 889863
+      },
+      "updates": [
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 64,
+          "pendingCount": 64,
+          "leaves": 1,
+          "maxLeaf": 64,
+          "routingBytes": 1472,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4473914,
+          "clusteringAndFetchMs": 1.6017199999996592,
+          "totalMs": 366.4504799999995
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 128,
+          "pendingCount": 128,
+          "leaves": 2,
+          "maxLeaf": 64,
+          "routingBytes": 2648,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4473274,
+          "clusteringAndFetchMs": 1.2419950000003155,
+          "totalMs": 344.56971500000054
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 192,
+          "pendingCount": 192,
+          "leaves": 3,
+          "maxLeaf": 64,
+          "routingBytes": 3822,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4475664,
+          "clusteringAndFetchMs": 1.2134900000000926,
+          "totalMs": 338.4766890000001
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 256,
+          "pendingCount": 256,
+          "leaves": 4,
+          "maxLeaf": 64,
+          "routingBytes": 4996,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4476526,
+          "clusteringAndFetchMs": 1.1501420000004146,
+          "totalMs": 351.44307899999967
+        },
+        {
+          "format": "buffered-private-centroid-tree-experiment-v1",
+          "embeddingSpace": "COCO CLIP ViT-B/32 q8",
+          "count": 320,
+          "pendingCount": 320,
+          "leaves": 5,
+          "maxLeaf": 64,
+          "routingBytes": 6170,
+          "inserted": 64,
+          "splits": 0,
+          "mergeCount": 0,
+          "touchedLeaves": 1,
+          "fetchedVectors": 0,
+          "rewrittenVectors": 64,
+          "uploadedBytes": 4479558,
+          "clusteringAndFetchMs": 1.113945000000058,
+          "totalMs": 344.6710869999997
+        }
+      ],
+      "queries": [
+        {
+          "captionId": 362169,
+          "annRecall10": 1,
+          "candidates": 320,
+          "searchMs": 4328.757576999999,
+          "serverComputeMs": 3254.926389
+        },
+        {
+          "captionId": 132886,
+          "annRecall10": 1,
+          "candidates": 320,
+          "searchMs": 3552.8798179999994,
+          "serverComputeMs": 3432.6003920000003
+        },
+        {
+          "captionId": 606064,
+          "annRecall10": 1,
+          "candidates": 320,
+          "searchMs": 3241.9391699999996,
+          "serverComputeMs": 3115.0722769999993
+        },
+        {
+          "captionId": 403727,
+          "annRecall10": 1,
+          "candidates": 320,
+          "searchMs": 3625.711995999998,
+          "serverComputeMs": 3503.367484999999
+        },
+        {
+          "captionId": 661678,
+          "annRecall10": 1,
+          "candidates": 320,
+          "searchMs": 3375.92511,
+          "serverComputeMs": 3243.350162999999
+        }
+      ],
+      "exhaustiveQueries": [],
+      "summary": {
+        "meanAnnRecall10": 1,
+        "meanCandidateFraction": 1,
+        "meanServerComputeMs": 3309.8633411999995,
+        "p50SearchMs": 3552.8798179999994,
+        "p95SearchMs": 4328.757576999999,
+        "rewrittenVectors": 320
+      }
+    }
+  ]
+}
