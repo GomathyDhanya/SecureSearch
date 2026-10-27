@@ -10,7 +10,7 @@ Personal photo search where the server never sees plaintext. The client embeds i
 4. **Server computes blindly.** Ciphertext–ciphertext similarity runs server-side over the routed groups; encrypted scores come back for the client to decrypt and rank.
 5. **Two search modes.** Adaptive search expands groups until private score bounds rule out the rest. Query-private cover mode instead sends one randomized fixed-size group set per query, giving a per-query ε-local-DP guarantee on the access pattern.
 
-![architecture](architecture.jpg)
+
 
 ## Threat model
 
